@@ -9,9 +9,9 @@
     "deploy": "git subtree push --prefix dist origin gh-pages"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "author": "Ead Adyreal",
+  "license": "MIT",
+  "description": "A frontend-only, responsive To-Do List application that uses the browser's persistent **localStorage** API to store task data.",
   "devDependencies": {
     "css-loader": "^7.1.2",
     "html-loader": "^5.1.0",
