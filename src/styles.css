@@ -23,11 +23,11 @@
 
 /* Berkshire Swash - Display font for branding */
 @font-face {
-    font-family: 'berkshire';
-    src: url('assets/fonts/berkshireswash-regular-webfont.woff2') format('woff2'),
-         url('assets/fonts/berkshireswash-regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "berkshire";
+  src: url("assets/fonts/berkshireswash-regular-webfont.woff2") format("woff2"),
+    url("assets/fonts/berkshireswash-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
 
 /* ============================================
@@ -37,9 +37,9 @@
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 /* ============================================
@@ -47,53 +47,53 @@
    ============================================ */
 
 :root {
-    /* Color Palette */
-    --color-bg-primary: #101010;        /* Midnight Black - Main background */
-    --color-bg-secondary: #1c1c1c;      /* Charcoal - Sidebar background */
-    --color-bg-accent: #E6F7FF;         /* Light Blue - Highlight background */
-    
-    --color-text-primary: #008B8B;      /* Dark Cyan - Primary text */
-    --color-text-accent: #00BFFF;       /* Deep Sky Blue - Accent text */
-    
-    /* Typography Scale */
-    --font-family-primary: 'Inter', sans-serif;
-    --font-family-display: 'berkshire', serif;
-    
-    --font-size-base: 1.6rem;           /* 16px */
-    --font-size-large: 2rem;            /* 20px */
-    --font-size-xlarge: 3.2rem;         /* 32px */
-    --font-size-xxlarge: 4rem;          /* 40px */
-    --font-size-display: 5rem;          /* 50px */
-    
-    --font-weight-normal: 400;
-    --font-weight-medium: 500;
-    --font-weight-semibold: 600;
-    --font-weight-bold: 700;
-    --font-weight-extrabold: 800;
-    
-    --line-height-tight: 1.1;
-    --line-height-normal: 1.5;
-    
-    /* Spacing */
-    --spacing-xs: 7px;
-    --spacing-sm: 10px;
-    --spacing-md: 15px;
-    --spacing-lg: 20px;
-    --spacing-xl: 25px;
-    --spacing-xxl: 35px;
-    --spacing-xxxl: 50px;
-    
-    /* Border Radius */
-    --radius-sm: 6px;
-    --radius-md: 8px;
-    
-    /* Icon Sizes */
-    --icon-size-sm: 16px;
-    --icon-size-md: 20px;
-    --icon-size-lg: 24px;
-    
-    /* Transitions */
-    --transition-default: 0.2s all ease;
+  /* Color Palette */
+  --color-bg-primary: #101010; /* Midnight Black - Main background */
+  --color-bg-secondary: #1c1c1c; /* Charcoal - Sidebar background */
+  --color-bg-accent: #e6f7ff; /* Light Blue - Highlight background */
+
+  --color-text-primary: #008b8b; /* Dark Cyan - Primary text */
+  --color-text-accent: #00bfff; /* Deep Sky Blue - Accent text */
+
+  /* Typography Scale */
+  --font-family-primary: "Inter", sans-serif;
+  --font-family-display: "berkshire", serif;
+
+  --font-size-base: 1.6rem; /* 16px */
+  --font-size-large: 2rem; /* 20px */
+  --font-size-xlarge: 3.2rem; /* 32px */
+  --font-size-xxlarge: 4rem; /* 40px */
+  --font-size-display: 5rem; /* 50px */
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+
+  --line-height-tight: 1.1;
+  --line-height-normal: 1.5;
+
+  /* Spacing */
+  --spacing-xs: 7px;
+  --spacing-sm: 10px;
+  --spacing-md: 15px;
+  --spacing-lg: 20px;
+  --spacing-xl: 25px;
+  --spacing-xxl: 35px;
+  --spacing-xxxl: 50px;
+
+  /* Border Radius */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+
+  /* Icon Sizes */
+  --icon-size-sm: 16px;
+  --icon-size-md: 20px;
+  --icon-size-lg: 24px;
+
+  /* Transitions */
+  --transition-default: 0.2s all ease;
 }
 
 /* ============================================
@@ -102,17 +102,17 @@
 
 /* Set root font-size to 10px for easier rem calculations (1rem = 10px) */
 html {
-    font-size: 10px;
-    height: 100%;
+  font-size: 10px;
+  height: 100%;
 }
 
 body {
-    height: 100%;
-    font-family: var(--font-family-primary);
-    font-size: var(--font-size-base);
-    line-height: var(--line-height-normal);
-    color: var(--color-text-primary);
-    background-color: var(--color-bg-primary);
+  height: 100%;
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-primary);
 }
 
 /* Ensure consistent typography across form elements */
@@ -120,39 +120,39 @@ button,
 input,
 select,
 textarea {
-    font-family: inherit;
-    font-size: inherit;
-    color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
 }
 
 /* Heading Styles */
 h1 {
-    margin-bottom: var(--spacing-xl);
-    font-family: var(--font-family-display);
-    font-size: var(--font-size-xxlarge);
-    font-weight: var(--font-weight-extrabold);
-    color: var(--color-text-accent);
+  margin-bottom: var(--spacing-xl);
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-xxlarge);
+  font-weight: var(--font-weight-extrabold);
+  color: var(--color-text-accent);
 }
 
 h3 {
-    font-size: var(--font-size-xlarge);
-    font-weight: 750; /* Custom weight between bold and extrabold */
+  font-size: var(--font-size-xlarge);
+  font-weight: 750; /* Custom weight between bold and extrabold */
 }
 
 /* Display text styling (used for large emphasis) */
 p {
-    font-size: var(--font-size-display);
-    line-height: var(--line-height-tight);
+  font-size: var(--font-size-display);
+  line-height: var(--line-height-tight);
 }
 
 /* List Reset */
 ul {
-    padding: 0;
-    list-style: none;
+  padding: 0;
+  list-style: none;
 }
 
 li {
-    padding: 0;
+  padding: 0;
 }
 
 /* ============================================
@@ -160,9 +160,9 @@ li {
    ============================================ */
 
 .main-container {
-    display: grid;
-    grid-template-columns: 325px 1fr; /* Fixed sidebar, flexible workspace */
-    height: 100%;
+  display: grid;
+  grid-template-columns: 325px 1fr; /* Fixed sidebar, flexible workspace */
+  height: 100%;
 }
 
 /* ============================================
@@ -170,76 +170,76 @@ li {
    ============================================ */
 
 .sidebar {
-    display: grid;
-    grid-template-rows: auto auto 1fr auto; /* Logo, nav, projects (flexible), footer */
-    padding: var(--spacing-xxl);
-    background-color: var(--color-bg-secondary);
+  display: grid;
+  grid-template-rows: auto auto 1fr auto; /* Logo, nav, projects (flexible), footer */
+  padding: var(--spacing-xxl);
+  background-color: var(--color-bg-secondary);
 }
 
 /* Sidebar Logo */
 .sidebar__logo {
-    /* Inherits h1 styles from base */
+  /* Inherits h1 styles from base */
 }
 
 /* Primary Navigation */
 .sidebar__navigation {
-    margin-bottom: 40px;
+  margin-bottom: 40px;
 }
 
 .nav-list {
-    /* Reset applied globally to ul */
+  /* Reset applied globally to ul */
 }
 
 /* Navigation Items */
 .nav-item {
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-sm);
-    padding: var(--spacing-xs) 12px;
-    font-weight: var(--font-weight-medium);
-    border-radius: var(--radius-sm);
-    cursor: pointer;
-    user-select: none;
-    transition: var(--transition-default);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-xs) 12px;
+  font-weight: var(--font-weight-medium);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  user-select: none;
+  transition: var(--transition-default);
 }
 
 .nav-item--active {
-    background-color: var(--color-bg-accent);
-    color: var(--color-text-accent);
-    font-weight: 650; /* Slightly heavier than medium for emphasis */
+  background-color: var(--color-bg-accent);
+  color: var(--color-text-accent);
+  font-weight: 650; /* Slightly heavier than medium for emphasis */
 }
 
 .nav-item__icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: var(--icon-size-md);
-    height: var(--icon-size-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--icon-size-md);
+  height: var(--icon-size-md);
 }
 
 .nav-item__label {
-    /* Text inherits from nav-item */
+  /* Text inherits from nav-item */
 }
 
 /* User Projects Section */
 .sidebar__projects {
-    /* Grows to fill available space due to grid layout */
+  /* Grows to fill available space due to grid layout */
 }
 
 .section-title {
-    margin-bottom: var(--spacing-lg);
-    font-size: var(--font-size-large);
-    font-weight: var(--font-weight-extrabold);
-    color: var(--color-text-accent);
+  margin-bottom: var(--spacing-lg);
+  font-size: var(--font-size-large);
+  font-weight: var(--font-weight-extrabold);
+  color: var(--color-text-accent);
 }
 
 .project-list {
-    /* Will be populated dynamically */
+  /* Will be populated dynamically */
 }
 
 /* Sidebar Footer */
 .sidebar__footer {
-    /* Positioned at bottom by grid layout */
+  /* Positioned at bottom by grid layout */
 }
 
 /* ============================================
@@ -247,44 +247,44 @@ li {
    ============================================ */
 
 .workspace {
-    /* Takes remaining space in grid */
+  /* Takes remaining space in grid */
 }
 
 .workspace__container {
-    max-width: 1200px;
-    width: 100%;
-    height: 100%;
-    margin: 0 auto;
-    padding: var(--spacing-xxxl);
-    color: var(--color-text-accent);
+  max-width: 1200px;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  padding: var(--spacing-xxxl);
+  color: var(--color-text-accent);
 }
 
 /* Workspace Header */
 .workspace__header {
-    /* Container for title and actions */
+  /* Container for title and actions */
 }
 
 .workspace__header-top {
-    display: flex;
-    gap: var(--spacing-sm);
-    margin-bottom: var(--spacing-lg);
+  display: flex;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-lg);
 }
 
 .workspace__title {
-    flex-grow: 1;
-    /* Inherits h3 styles from base */
+  flex-grow: 1;
+  /* Inherits h3 styles from base */
 }
 
 /* Add Task Section */
 .add-task-wrapper {
-    display: block;
-    background-color: var(--color-bg-accent);
-    border-radius: var(--radius-md);
+  display: block;
+  background-color: var(--color-bg-accent);
+  border-radius: var(--radius-md);
 }
 
 /* Task List Container */
 .task-list {
-    /* Will be populated dynamically with task items */
+  /* Will be populated dynamically with task items */
 }
 
 /* ============================================
@@ -293,72 +293,72 @@ li {
 
 /* Base Button Reset */
 button {
-    appearance: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    transition: var(--transition-default);
+  appearance: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: var(--transition-default);
 }
 
 /* Button Base Class */
 .btn {
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-md);
-    font-weight: var(--font-weight-semibold);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  font-weight: var(--font-weight-semibold);
 }
 
 .btn__icon {
-    display: block;
-    fill: var(--color-text-primary);
+  display: block;
+  fill: var(--color-text-primary);
 }
 
 .btn__label {
-    /* Text inherits from .btn */
+  /* Text inherits from .btn */
 }
 
 /* Primary Button (Add Project) */
 .btn--primary {
-    width: 100%;
-    padding: var(--spacing-sm);
-    border-radius: var(--radius-sm);
-    font-weight: var(--font-weight-bold);
+  width: 100%;
+  padding: var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  font-weight: var(--font-weight-bold);
 }
 
 .btn--primary:hover {
-    background-color: var(--color-bg-accent);
-    color: var(--color-text-accent);
+  background-color: var(--color-bg-accent);
+  color: var(--color-text-accent);
 }
 
 /* Button Active State */
 .btn--active {
-    display: flex; /* Override default display: none if needed */
+  display: flex; /* Override default display: none if needed */
 }
 
 /* Add Project Button (ID Selector for JS targeting) */
 #addProjectBtn {
-    display: none; /* Hidden by default, shown when .btn--active is applied */
+  display: none; /* Hidden by default, shown when .btn--active is applied */
 }
 
 #addProjectBtn.btn--active {
-    display: flex;
+  display: flex;
 }
 
 #addProjectBtn .btn__icon {
-    width: var(--icon-size-lg);
-    height: var(--icon-size-lg);
+  width: var(--icon-size-lg);
+  height: var(--icon-size-lg);
 }
 
 /* Add Task Button */
 .btn--add-task {
-    width: 100%;
-    padding: var(--spacing-md) var(--spacing-lg);
-    color: var(--color-text-primary);
+  width: 100%;
+  padding: var(--spacing-md) var(--spacing-lg);
+  color: var(--color-text-primary);
 }
 
 .btn--add-task .btn__icon {
-    fill: var(--color-text-primary);
+  fill: var(--color-text-primary);
 }
 
 /* ============================================
@@ -367,21 +367,21 @@ button {
 
 /* Flex Grow Utility */
 .flex-g {
-    flex-grow: 1;
+  flex-grow: 1;
 }
 
 /* Icon Container - Ensures proper SVG display */
 .icon-container > svg,
 .nav-item__icon > svg {
-    display: block;
+  display: block;
 }
 
 /* Generic Icon Styling */
 .icon path {
-    fill: var(--color-text-primary);
+  fill: var(--color-text-primary);
 }
 
 /* Navigation Icon Specific Styling */
 .nav-item--active .icon path {
-    fill: var(--color-text-accent);
+  fill: var(--color-text-accent);
 }

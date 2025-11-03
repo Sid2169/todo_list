@@ -21,7 +21,7 @@ const taskList = document.getElementById("taskList");
 const NAV_VIEWS = {
   HOME: "Home",
   TODAY: "Today",
-  THIS_WEEK: "This Week"
+  THIS_WEEK: "This Week",
 };
 
 // ============================================
@@ -33,7 +33,7 @@ const NAV_VIEWS = {
  * Attaches click handlers to all navigation items
  */
 function initializeNavigation() {
-  navItems.forEach(navItem => {
+  navItems.forEach((navItem) => {
     navItem.addEventListener("click", handleNavItemClick);
   });
 }
@@ -50,10 +50,10 @@ function initializeNavigation() {
 function handleNavItemClick(event) {
   const clickedItem = event.currentTarget;
   const viewName = getNavItemLabel(clickedItem);
-  
+
   // Update active navigation item
   setActiveNavItem(clickedItem);
-  
+
   // Update view-specific UI
   updateViewUI(viewName);
 }
@@ -70,10 +70,10 @@ function handleNavItemClick(event) {
 function setActiveNavItem(activeItem) {
   // Remove active state from all nav items
   const activeNavItems = sidebar.querySelectorAll(".nav-item--active");
-  activeNavItems.forEach(item => {
+  activeNavItems.forEach((item) => {
     item.classList.remove("nav-item--active");
   });
-  
+
   // Add active state to clicked item
   activeItem.classList.add("nav-item--active");
 }
@@ -90,7 +90,7 @@ function updateViewUI(viewName) {
   } else {
     hideAddTaskButton();
   }
-  
+
   // Update workspace title (if needed in future)
   // workspaceTitle.textContent = viewName;
 }
@@ -132,7 +132,7 @@ function getNavItemLabel(navItem) {
  */
 function init() {
   initializeNavigation();
-  
+
   // Set initial state (Home view active by default)
   const homeNavItem = navItems[0];
   if (homeNavItem) {

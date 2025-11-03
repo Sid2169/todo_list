@@ -1,6 +1,6 @@
 /**
  * @module src/modules/ProjectList
- * @description Provides the ProjectList class for managing a collection of project objects, 
+ * @description Provides the ProjectList class for managing a collection of project objects,
  * where each project is indexed by its unique ID.
  */
 
@@ -9,7 +9,6 @@
  * Handles creation, addition, retrieval, and deletion of projects within the to-do app.
  */
 export class ProjectList {
-
   #projects;
 
   /**
@@ -35,7 +34,9 @@ export class ProjectList {
    */
   addProject(project) {
     if (!project || !project.id) {
-      throw new Error("Invalid project: project object and project.id are required.");
+      throw new Error(
+        "Invalid project: project object and project.id are required."
+      );
     }
 
     this.#projects[project.id] = project;
@@ -73,6 +74,6 @@ export class ProjectList {
    */
   getAllProjects() {
     // Return copies to avoid external mutations
-    return Object.values(this.#projects).map(project => ({ ...project }));
+    return Object.values(this.#projects).map((project) => ({ ...project }));
   }
 }
