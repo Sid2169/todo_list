@@ -9,6 +9,9 @@
  * Handles creation, addition, retrieval, and deletion of projects within the to-do app.
  */
 export class ProjectList {
+
+  #projects;
+
   /**
    * Create a new ProjectList instance.
    * Initializes an empty project map.
@@ -19,7 +22,7 @@ export class ProjectList {
      * @type {Object.<string, object>}
      * @private
      */
-    this.projects = {};
+    this.#projects = {};
   }
 
   /**
@@ -35,7 +38,7 @@ export class ProjectList {
       throw new Error("Invalid project: project object and project.id are required.");
     }
 
-    this.projects[project.id] = project;
+    this.#projects[project.id] = project;
   }
 
   /**
@@ -45,7 +48,7 @@ export class ProjectList {
    * @returns {object|null} The project object if found, otherwise null.
    */
   getProject(projectId) {
-    return this.projects[projectId] || null;
+    return this.#projects[projectId] || null;
   }
 
   /**
@@ -55,11 +58,11 @@ export class ProjectList {
    * @returns {boolean} True if the project existed and was deleted, false otherwise.
    */
   deleteProject(projectId) {
-    if (!this.projects.hasOwnProperty(projectId)) {
+    if (!this.#projects.hasOwnProperty(projectId)) {
       return false;
     }
 
-    delete this.projects[projectId];
+    delete this.#projects[projectId];
     return true;
   }
 
@@ -69,6 +72,7 @@ export class ProjectList {
    * @returns {object[]} Array of all project objects.
    */
   getAllProjects() {
-    return Object.values(this.projects);
+    // Return copies to avoid external mutations
+    return Object.values(this.#projects).map(project => ({ ...project }));
   }
 }
