@@ -76,4 +76,23 @@ export class ProjectList {
     // Return copies to avoid external mutations
     return Object.values(this.#projects).map((project) => ({ ...project }));
   }
+
+  /**
+   * Converts a project list object into a string.
+   *
+   *  @returns - A string of project object list.
+   */
+  convertToString() {
+    return JSON.stringify(this.getAllProjects());
+  }
+
+  /**
+   * Converts string representing project list back to object.
+   * 
+   * @param {string} projectListString - A string from the local storage representing project list object.
+   * @returns An object representing list of projects.
+   */
+  convertToObject(projectListString) {
+    return JSON.parse(projectListString);
+  }
 }
