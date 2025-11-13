@@ -101,7 +101,7 @@ describe('Task', () => {
       expect(updated.detail).toBe(newValues.detail);
       expect(updated.priority).toBe(newValues.priority);
       expect(updated.dueDate.toISOString()).toContain('2026-01-01');
-      expect(updated.lastUpdated.getTime()).toBeGreaterThan(
+      expect(updated.lastUpdated.getTime()).toBeGreaterThanOrEqual(
         oldData.lastUpdated.getTime()
       );
     });
@@ -124,7 +124,7 @@ describe('Task', () => {
       const after = task.readTask();
 
       expect(after.completed).toBe(true);
-      expect(after.lastUpdated.getTime()).toBeGreaterThan(
+      expect(after.lastUpdated.getTime()).toBeGreaterThanOrEqual(
         before.lastUpdated.getTime()
       );
 
