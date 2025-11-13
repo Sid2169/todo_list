@@ -11,32 +11,40 @@
  * Each project maintains its own metadata and list of tasks.
  */
 export class Project {
+  //Private fields
+  #name;
+  #description;
+  #creationDate;
+  #lastUpdated;
+  #id;
+  #todoList;
+
   /**
    * @param {string} name - The name/title of the project.
    * @param {string} description - A short summary or purpose of the project.
    */
   constructor(name, description) {
     /** @type {string} */
-    this.name = name;
+    this.#name = name;
 
     /** @type {string} */
-    this.description = description;
+    this.#description = description;
 
     /** @type {Date} - Timestamp of project creation. */
-    this.creationDate = new Date();
+    this.#creationDate = new Date();
 
     /** @type {Date} - Timestamp of the last project update. */
-    this.lastUpdated = new Date();
+    this.#lastUpdated = new Date();
 
     /** @type {string} - Unique identifier for this project. */
-    this.id = crypto.randomUUID();
+    this.#id = crypto.randomUUID();
 
     /**
      * @type {Array<Object>}
      * Array of task objects belonging to this project.
      * Each task should ideally have its own `id` property.
      */
-    this.todoList = [];
+    this.#todoList = [];
   }
 
   /**
@@ -45,8 +53,8 @@ export class Project {
    * @param {Object} task - The task object to be added.
    */
   addTask(task) {
-    this.todoList.push(task);
-    this.lastUpdated = new Date();
+    this.#todoList.push(task);
+    this.#lastUpdated = new Date();
   }
 
   /**
@@ -56,7 +64,14 @@ export class Project {
    * @returns {Project} The current project object.
    */
   readProject() {
-    return this;
+    return {
+      name: this.#name,
+      description: this.#description,
+      creationDate: new Date(this.#creationDate),
+      lastUpdated: new Date(this.#lastUpdated),
+      id: this.#id,
+      todoList: this.#todoList.map(task => ({ ...task })),
+    };
   }
 
   /**
@@ -66,10 +81,10 @@ export class Project {
    * @param {string} newName - The new name for the project.
    * @param {string} newDescription - The new description for the project.
    */
-  updateProject(newName, newDescription) {
-    this.name = newName;
-    this.description = newDescription;
-    this.lastUpdated = new Date();
+  updateProject(newName = this.#name, newDescription = this.#description) {
+    this.#name = newName;
+    this.#description = newDescription;
+    this.#lastUpdated = new Date();
   }
 
   /**
@@ -78,7 +93,7 @@ export class Project {
    * @param {string} taskId - The unique identifier of the task to remove.
    */
   deleteTask(taskId) {
-    this.todoList = this.todoList.filter((task) => task.id !== taskId);
-    this.lastUpdated = new Date();
+    this.#todoList = this.#todoList.filter((task) => task.id !== taskId);
+    this.#lastUpdated = new Date();
   }
 }
