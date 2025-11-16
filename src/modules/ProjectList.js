@@ -76,23 +76,49 @@ export class ProjectList {
     // Return copies to avoid external mutations
     return Object.values(this.#projects).map((project) => ({ ...project }));
   }
-
+  
   /**
-   * Converts a project list object into a string.
-   *
-   *  @returns - A string of project object list.
+   * Save the project list to localStorage under provided key.
+   * 
+   * @param {string} storageKey
    */
-  convertToString() {
-    return JSON.stringify(this.getAllProjects());
+  saveToLocal(storageKey) {
+    if (!storageKey) {
+      throw new Error("A valid storage key is required to save to local Storage.");
+    }
+
+    const data = JSON.stringify(this.#projects);
+    localStorage.setItem(storageKey, data);
+    return true;
   }
 
   /**
-   * Converts string representing project list back to object.
+   * Load the project list from localStorage using a provided key
+   * Replace the current project list.
    * 
-   * @param {string} projectListString - A string from the local storage representing project list object.
-   * @returns An object representing list of projects.
+   * @param {string} storageKey
    */
-  convertToObject(projectListString) {
-    return JSON.parse(projectListString);
+  loadFromLocal(storageKey) {
+    if (!storageKey) {
+      throw new Error("A valid storage key is required to load from local storage");
+    }
+
+    const stored = localStorage.getItem(storageKey);
+    if(!stored) {
+      this.#projects = {};
+      return;
+    }
+
+    try {
+      const parsed = JSON.parse(stored);
+      if (typeof parsed !== "object" || parsed === null) {
+        this.#projects = {};
+        return;
+      }
+
+      this.#projects = parsed;
+    } catch {
+      this.#projects = {};
+    }
   }
 }
