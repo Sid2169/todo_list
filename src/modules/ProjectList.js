@@ -10,18 +10,28 @@
  */
 export class ProjectList {
   #projects;
+  #STORAGE_KEY;
 
   /**
    * Create a new ProjectList instance.
    * Initializes an empty project map.
+   * 
+   * @param {string} storageKey - Local Storage key for project list instance
    */
-  constructor() {
+  constructor(storageKey = "defaultKey") {
     /**
      * Internal storage for projects, using project IDs as keys.
      * @type {Object.<string, object>}
      * @private
      */
     this.#projects = {};
+
+    /**
+     * Storage Key for local storage
+     * @type {string}
+     * @private
+     */
+    this.#STORAGE_KEY = storageKey;
   }
 
   /**
@@ -78,32 +88,20 @@ export class ProjectList {
   }
   
   /**
-   * Save the project list to localStorage under provided key.
-   * 
-   * @param {string} storageKey
+   * Save the project list to localStorage.
    */
-  saveToLocal(storageKey) {
-    if (!storageKey) {
-      throw new Error("A valid storage key is required to save to local Storage.");
-    }
-
+  saveToLocal() {
     const data = JSON.stringify(this.#projects);
-    localStorage.setItem(storageKey, data);
+    localStorage.setItem(this.#STORAGE_KEY, data);
     return true;
   }
 
   /**
-   * Load the project list from localStorage using a provided key
+   * Load the project list from localStorage
    * Replace the current project list.
-   * 
-   * @param {string} storageKey
    */
-  loadFromLocal(storageKey) {
-    if (!storageKey) {
-      throw new Error("A valid storage key is required to load from local storage");
-    }
-
-    const stored = localStorage.getItem(storageKey);
+  loadFromLocal() {
+    const stored = localStorage.getItem(this.#STORAGE_KEY);
     if(!stored) {
       this.#projects = {};
       return;
